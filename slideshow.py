@@ -53,14 +53,14 @@ def get_images(folder: str) -> List[str]:
     img_exts = ('.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.gif')
     files = [f for f in os.listdir(folder) if f.lower().endswith(img_exts)]
     if len(files) < 2:
-        raise ValueError("Not enough images in the folder!")
+        raise ValueError("not enough images in the folder")
     return [os.path.join(folder, f) for f in sorted(files)]
 
 
 def get_transitions(folder: str) -> List[str]:
     files = [f for f in os.listdir(folder) if f.lower().endswith('.glsl')]
     if len(files) == 0:
-        raise ValueError("No fragment .glsl transitions found in folder!")
+        raise ValueError(f"no fragment .glsl transitions found in folder: {folder}")
     return [os.path.join(folder, f) for f in files]
 
 
