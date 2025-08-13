@@ -8,7 +8,7 @@
 const int bars = 64;
 
 // Multiplier for speed ratio. 0 = no variation when going down, higher = some elements go much faster
-const float amplitude = 2;
+const float amplitude = 2.0;
 
 // Further variations in speed. 0 = no noise, 1 = super noisy (ignore frequency)
 const float noise = 0.1;

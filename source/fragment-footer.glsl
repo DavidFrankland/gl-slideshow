@@ -1,4 +1,4 @@
 void main()
 {
-    fragColor = transition(uv);
+    gl_FragColor = transition(uv);
 }

@@ -1,7 +1,7 @@
-#version 330
+#version 100
 
-in vec2 pos;
-out vec2 uv;
+attribute vec2 pos;
+varying vec2 uv;
 
 void main()
 {

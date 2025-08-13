@@ -3,7 +3,7 @@
 // Hexagonal math from: http://www.redblobgames.com/grids/hexagons/
 
 const int steps = 50;
-const float horizontalHexagons= 20;
+const float horizontalHexagons= 20.0;
 const float ratio = 1.6;
 
 struct Hexagon {
