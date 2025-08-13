@@ -1,3 +1,5 @@
+// reason for rejection: too sluggish on Raspberry Pi 3
+
 // License: MIT
 // Author: rectalogic
 // ported by gre from https://gist.github.com/rectalogic/b86b90161503a0023231
