@@ -133,11 +133,14 @@ def main() -> None:
 
     # Loop through image pairs
     idx: int = 0
+    trans_index: int = 0
 
     while not glfw.window_should_close(window):
         tex1: int = textures[idx]
         tex2: int = textures[(idx + 1) % len(textures)]
-        fragment_path: str = random.choice(transition_paths)
+        fragment_path: str = transition_paths[trans_index]
+        trans_index = (trans_index+1) % len(transition_paths)
+        print(fragment_path)
         fragment_src: str = load_shader_source(fragment_path)
         fragment_src = header_src + fragment_src + footer_src
 
