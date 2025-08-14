@@ -132,12 +132,12 @@ def main() -> None:
     textures: List[int] = [load_texture(p) for p in image_paths]
 
     # Loop through image pairs
-    idx: int = 0
+    image_index: int = 0
     trans_index: int = 0
 
     while not glfw.window_should_close(window):
-        tex1: int = textures[idx]
-        tex2: int = textures[(idx + 1) % len(textures)]
+        tex1: int = textures[image_index]
+        tex2: int = textures[(image_index + 1) % len(textures)]
         fragment_path: str = transition_paths[trans_index]
         trans_index = (trans_index+1) % len(transition_paths)
         print(fragment_path)
@@ -173,7 +173,7 @@ def main() -> None:
         fps = frame_count / transition_duration
         print(f'{fps:.2f} fps')
 
-        idx = (idx + 1) % len(textures)
+        image_index = (image_index + 1) % len(textures)
         glDeleteProgram(program)
 
     glfw.terminate()
