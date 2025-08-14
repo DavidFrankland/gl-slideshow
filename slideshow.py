@@ -161,12 +161,17 @@ def main() -> None:
 
         # transition to the second image
         start_time: float = time.time()
+        frame_count: int = 0
         while not glfw.window_should_close(window):
             elapsed: float = time.time() - start_time
             progress: float = min(elapsed / transition_duration, 1.0)
             draw_transition(window, program, tex1, tex2, progress)
+            frame_count += 1
             if progress >= 1.0:
                 break
+        
+        fps = frame_count / transition_duration
+        print(f'{fps:.2f} fps')
 
         idx = (idx + 1) % len(textures)
         glDeleteProgram(program)
